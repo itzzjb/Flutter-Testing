@@ -49,6 +49,8 @@ android {
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        // We need to have this in order to run integration tests
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -64,4 +66,7 @@ flutter {
     source '../..'
 }
 
-dependencies {}
+dependencies {
+    // We need to have this dependency in order to run integration tests
+    implementation 'com.android.support:multidex:1.0.3'
+}
